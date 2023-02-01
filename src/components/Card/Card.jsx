@@ -1,32 +1,36 @@
+import { useEffect } from "react";
 import { useState } from "react";
+import useFetch from "../../Hooks/useFetch";
+import { GET_POKEMON } from "../../API/Api";
 import {
-  ButtonDetails, CardContent, Details, ImagemPokemon, PokemonId, PokemonName
+  ButtonDetails,
+  CardContent,
+  Details,
+  ImagemPokemon,
+  PokemonId,
+  PokemonName,
 } from "./styles";
 
 function Card() {
-  const [pokemon, setPokemon] = useState();
+  const { request, data } = useFetch();
 
-  async function buscaPokemon() {
-    const response = await fetch("https://pokeapi.co/api/v2/pokemon/beedrill");
-    const json = await response.json();
-    setPokemon(json);
-  }
-
-  buscaPokemon();
+  useEffect(() => {
+    const { url, options } = GET_POKEMON("bulbasaur");
+    request(url, options);
+  }, []);
 
   return (
     <div className="container">
       <CardContent>
-        {pokemon ? (
+        {data ? (
           <>
             <ImagemPokemon
-              src={pokemon?.sprites.other.dream_world.front_default}
+              src={data?.sprites.other.dream_world.front_default}
               alt="Foto do Pokemon"
             />
             <Details>
-              <PokemonName>{pokemon?.name}</PokemonName>
-              <PokemonId>#{pokemon?.id}</PokemonId>
-              
+              <PokemonName>{data?.name}</PokemonName>
+              <PokemonId>#{data?.id}</PokemonId>
             </Details>
             <ButtonDetails>Mais Detalhes</ButtonDetails>
           </>
