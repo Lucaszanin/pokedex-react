@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useState } from "react";
 import useFetch from "../../Hooks/useFetch";
 import { GET_POKEMON } from "../../API/Api";
 import {
@@ -15,7 +14,7 @@ function Card() {
   const { request, data } = useFetch();
 
   useEffect(() => {
-    const { url, options } = GET_POKEMON("nidoqueen");
+    const { url, options } = GET_POKEMON("raichu");
     request(url, options);
   }, []);
 
@@ -33,6 +32,7 @@ function Card() {
               <PokemonId>#{data?.id}</PokemonId>
             </Details>
             <ButtonDetails>Mais Detalhes</ButtonDetails>
+            
           </>
         ) : (
           <p>Pokemon não encontrado</p>
