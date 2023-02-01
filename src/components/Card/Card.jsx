@@ -15,7 +15,7 @@ function Card() {
   const { request, data } = useFetch();
 
   useEffect(() => {
-    const { url, options } = GET_POKEMON("bulbasaur");
+    const { url, options } = GET_POKEMON("nidoqueen");
     request(url, options);
   }, []);
 
