@@ -4,6 +4,7 @@ export const CardContent = styled.div`
   background: rgb(53, 61, 100);
   width: 250px;
   display: flex;
+  margin-bottom: 50px;
   flex-direction: column;
   align-items: center;
   padding: 30px;
@@ -29,7 +30,7 @@ export const ImagemPokemon = styled.img`
 `;
 
 export const Details = styled.div`
-  margin-top: 125px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,19 +52,42 @@ export const PokemonId = styled.p`
 `;
 
 export const ButtonDetails = styled.button`
-  background: rgb(247, 186, 21);
+  background: #f7ba15;
   color: #333;
   font-weight: 600;
   font-size: 18px;
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px 15px;
   border-radius: 50px;
-  margin-top: 60px;
+  margin-top: 20px;
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 5px 10px 4px -5px rgba(0, 0, 0, 0.5);
 
   &:hover {
     transform: scale(1.08);
+    color: #fff;
   }
+`;
+
+export const IconTypePokemon = styled.div`
+  background: #586080;
+  border-radius: 50%;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+`;
+
+export const TypePokemon = styled.div`
+  color: #ffff;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px 15px;
+  border-radius: 50px;
+  text-transform: capitalize;
 `;

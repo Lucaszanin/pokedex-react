@@ -52,7 +52,7 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  color: #FFF;
+  color: #fff;
 }
 
 .home-left .title {
@@ -86,7 +86,13 @@ body {
   }
 }
 
-.animationHero{
+.animationHero {
   height: 150px;
   margin-bottom: 30px;
+}
+
+.cardWrapper {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }

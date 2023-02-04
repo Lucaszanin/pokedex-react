@@ -7,18 +7,6 @@ function App() {
   return (
     <>
       <Home />
-      <div className="cardContainer">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </div>
     </>
   );
 }

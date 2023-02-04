@@ -1,42 +1,32 @@
-import { useEffect } from "react";
-import useFetch from "../../Hooks/useFetch";
-import { GET_POKEMON } from "../../API/Api";
+import fire from "../Card/TypesPokemon/Assets/pokemonTypes/fire.svg";
+
 import {
   ButtonDetails,
   CardContent,
   Details,
+  IconTypePokemon,
   ImagemPokemon,
   PokemonId,
   PokemonName,
+  TypePokemon,
 } from "./styles";
 
-function Card() {
-  const { request, data } = useFetch();
-
-  useEffect(() => {
-    const { url, options } = GET_POKEMON("raichu");
-    request(url, options);
-  }, []);
-
+function Card({ id, name, img, type }) {
   return (
     <div className="container">
       <CardContent>
-        {data ? (
-          <>
-            <ImagemPokemon
-              src={data?.sprites.other.dream_world.front_default}
-              alt="Foto do Pokemon"
-            />
-            <Details>
-              <PokemonName>{data?.name}</PokemonName>
-              <PokemonId>#{data?.id}</PokemonId>
-            </Details>
-            <ButtonDetails>Mais Detalhes</ButtonDetails>
-            
-          </>
-        ) : (
-          <p>Pokemon não encontrado</p>
-        )}
+        <ImagemPokemon src={img} alt="Foto do Pokemon" />
+        <Details>
+          <PokemonId>#{id}</PokemonId>
+          <PokemonName>{name}</PokemonName>
+          <TypePokemon>
+            <IconTypePokemon>
+              <img src={fire} alt="" />
+            </IconTypePokemon>
+            {type}
+          </TypePokemon>
+        </Details>
+        <ButtonDetails>Mais Detalhes</ButtonDetails>
       </CardContent>
     </div>
   );
