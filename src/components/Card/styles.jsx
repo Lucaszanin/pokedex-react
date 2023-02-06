@@ -71,7 +71,9 @@ export const ButtonDetails = styled.button`
 `;
 
 export const IconTypePokemon = styled.div`
-  background: #586080;
+  box-shadow: 0 0 8px 0;
+  background: #333;
+  backdrop-filter: blur(20px);
   border-radius: 10px;
   display: flex;
   padding: 6px 8px;
