@@ -11,7 +11,7 @@ export function GET_POKEMON(name) {
 
 export function GET_POKEMONS(qtde) {
   return {
-    url: `${API_URL}/?offset=${qtde}&limit=10`,
+    url: `${API_URL}/?offset=${qtde}&limit=8`,
     options: {
       method: "GET",
     },
