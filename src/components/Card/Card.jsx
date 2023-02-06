@@ -10,9 +10,10 @@ import {
   PokemonId,
   PokemonName,
   TypePokemon,
+  NameType,
 } from "./styles";
 
-function Card({ id, name, img, type }) {
+function Card({ id, name, img, type, type2 }) {
   return (
     <div className="container">
       <CardContent>
@@ -23,8 +24,15 @@ function Card({ id, name, img, type }) {
           <TypePokemon>
             <IconTypePokemon>
               <PokemonType type={type} />
+              <NameType>{type}</NameType>
             </IconTypePokemon>
-            {type}
+
+            {type2 ? (
+              <IconTypePokemon>
+                <PokemonType type={type2} />
+                <NameType>{type2}</NameType>
+              </IconTypePokemon>
+            ) : null}
           </TypePokemon>
         </Details>
 

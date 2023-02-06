@@ -74,6 +74,7 @@ function Home() {
                 id={id}
                 name={name}
                 type={types[0]?.type?.name}
+                type2={types[1]?.type?.name}
                 img={sprites?.other?.dream_world?.front_default}
               />
             ))}

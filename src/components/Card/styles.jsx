@@ -59,7 +59,7 @@ export const ButtonDetails = styled.button`
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px 15px;
   border-radius: 50px;
-  margin-top: 20px;
+  margin-top: 30px;
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 5px 10px 4px -5px rgba(0, 0, 0, 0.5);
@@ -72,22 +72,31 @@ export const ButtonDetails = styled.button`
 
 export const IconTypePokemon = styled.div`
   background: #586080;
-  border-radius: 50%;
+  border-radius: 10px;
   display: flex;
-  padding: 10px;
+  padding: 6px 8px;
   justify-content: center;
   align-items: center;
-  margin-right: 5px;
+  &:first-child {
+    margin-right: 10px;
+  }
 `;
 
 export const TypePokemon = styled.div`
   color: #ffff;
   display: flex;
-  padding: 10px;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px 15px;
   border-radius: 50px;
   text-transform: capitalize;
+`;
+
+export const NameType = styled.p`
+  color: #ffff;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  margin-left: 8px;
 `;

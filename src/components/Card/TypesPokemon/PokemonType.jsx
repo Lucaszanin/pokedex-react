@@ -76,6 +76,6 @@ export const PokemonType = ({ type }) => {
       return <img src={water} alt="Icon Dark" />;
 
     default:
-      return <h1>No Icon</h1>;
+      return null;
   }
 };
