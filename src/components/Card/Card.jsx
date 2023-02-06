@@ -1,4 +1,5 @@
 import fire from "../Card/TypesPokemon/Assets/pokemonTypes/fire.svg";
+import { PokemonType } from "./TypesPokemon/PokemonType";
 
 import {
   ButtonDetails,
@@ -21,11 +22,12 @@ function Card({ id, name, img, type }) {
           <PokemonName>{name}</PokemonName>
           <TypePokemon>
             <IconTypePokemon>
-              <img src={fire} alt="" />
+              <PokemonType type={type} />
             </IconTypePokemon>
             {type}
           </TypePokemon>
         </Details>
+
         <ButtonDetails>Mais Detalhes</ButtonDetails>
       </CardContent>
     </div>
