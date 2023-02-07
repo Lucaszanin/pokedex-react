@@ -6,7 +6,8 @@
 .main-container input {
   height: 35px;
   width: 25vw;
-  background-color: #2b3151;
+  color: white;
+  background-color: #333;
   border: 0.13rem solid #586080;
   border-radius: 8px;
 }

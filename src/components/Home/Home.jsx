@@ -1,14 +1,23 @@
 import { useEffect, useState } from "react";
 import { GET_POKEMONS } from "../../API/Api";
 import useFetch from "../../Hooks/useFetch";
+import Input from "../Input/Input";
 import heroImg from "./assets/hero.png";
+import estrela from "./assets/estrela.png";
 import pokebolaBackground from "./assets/pokebola-contorno.png";
 import pokebola from "./assets/pokebola.png";
 import pokebolaIcon from "./assets/pokebolaIcon.png";
 import Card from "../Card/Card";
 import { Waves } from "../Waves/Waves";
 import "./Home.css";
-import { ButtonWrapper, ButtonViewMore, PokebolaIcon } from "./styles";
+import {
+  ButtonWrapper,
+  ButtonViewMore,
+  PokebolaIcon,
+  ButtonSearch,
+  IconSearch,
+  ContainerSearch,
+} from "./styles";
 
 function Home() {
   const { request, data } = useFetch();
@@ -37,8 +46,6 @@ function Home() {
     getPokemon();
   }, [pokemonList]);
 
-  console.log("Offset Atual", offset);
-
   return (
     <>
       <div className="container">
@@ -65,6 +72,13 @@ function Home() {
       </div>
       <div className="animationHero">
         <Waves />
+
+        <ContainerSearch>
+          <Input />
+          <ButtonSearch>
+            <IconSearch src={estrela} alt="" />
+          </ButtonSearch>
+        </ContainerSearch>
 
         <div className="cardWrapper">
           {pokemon &&

@@ -72,11 +72,12 @@ export const ButtonDetails = styled.button`
 
 export const IconTypePokemon = styled.div`
   box-shadow: 0 0 8px 0;
-  background: #333;
+  background: rgb(51, 51, 51);
   backdrop-filter: blur(20px);
   border-radius: 10px;
   display: flex;
   padding: 6px 8px;
+  width: 90px;
   justify-content: center;
   align-items: center;
   &:first-child {
@@ -100,5 +101,5 @@ export const NameType = styled.p`
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   text-transform: capitalize;
-  margin-left: 8px;
+  margin-left: 5px;
 `;

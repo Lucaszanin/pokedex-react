@@ -33,3 +33,27 @@ export const ButtonViewMore = styled.button`
     color: #f7ba15;
   }
 `;
+
+export const ContainerSearch = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 90rem;
+  margin: 0 auto;
+`;
+
+export const ButtonSearch = styled.button`
+  background: transparent;
+  padding: 10px 15px;
+  margin-left: -80px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+export const IconSearch = styled.img`
+  width: 50px;
+`;
