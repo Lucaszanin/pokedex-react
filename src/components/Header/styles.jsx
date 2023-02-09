@@ -7,6 +7,9 @@ export const HeaderContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
+  @media (max-width: 320px) {
+    padding: 20px;
+  }
 `;
 
 export const LogoPokedex = styled.img`
@@ -16,5 +19,3 @@ export const LogoPokedex = styled.img`
     filter: drop-shadow(3px 3px 10px #6d4ff3);
   }
 `;
-
-

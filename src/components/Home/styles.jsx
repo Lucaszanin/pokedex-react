@@ -21,6 +21,23 @@ export const PokebolaBackgroundLeft = styled.img`
   position: fixed;
   z-index: -1;
   opacity: 0.1;
+
+  @media (max-width: 1024px) {
+    width: 49vw;
+  }
+
+  @media (max-width: 768px) {
+    left: calc(100vw - 24%);
+  }
+
+  @media (max-width: 425px) {
+    width: 70vw;
+    left: calc(100vw - 30%);
+  }
+
+  @media (max-width: 320px) {
+    left: calc(100vw - 17%);
+  }
 `;
 
 export const PokebolaBackgroundRigth = styled.img`
@@ -30,6 +47,22 @@ export const PokebolaBackgroundRigth = styled.img`
   position: fixed;
   z-index: -1;
   opacity: 0.1;
+  @media (max-width: 1024px) {
+    width: 49vw;
+  }
+
+  @media (max-width: 768px) {
+    right: calc(100vw - 24%);
+  }
+
+  @media (max-width: 425px) {
+    width: 70vw;
+    right: calc(100vw - 30%);
+  }
+
+  @media (max-width: 320px) {
+    right: calc(100vw - 17%);
+  }
 `;
 
 export const ContentLeft = styled.div`
@@ -47,6 +80,7 @@ export const SubTitle = styled.h2`
   font-size: 50px;
   padding: 0;
   margin: 0;
+  text-align: center;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
   color: #fff;
@@ -77,6 +111,12 @@ export const ImgDivider = styled.img`
     left: 50%;
     width: 5vw;
   }
+
+  @media (max-width: 425px) {
+    top: -19px;
+    left: 45%;
+    width: 10vw;
+  }
 `;
 
 export const Hero = styled.div`
@@ -92,6 +132,14 @@ export const HeroImg = styled.img`
 
   @media (max-width: 1024px) {
     max-width: 50vw;
+  }
+
+  @media (max-width: 425px) {
+    max-width: 80vw;
+  }
+
+  @media (max-width: 320px) {
+    max-width: 90vw;
   }
 `;
 
@@ -112,6 +160,7 @@ export const Title = styled.h1`
 
   @media (max-width: 425px) {
     font-size: 50px;
+    margin-right: 0;
   }
 `;
 
@@ -180,8 +229,16 @@ export const ContainerSearch = styled.div`
   max-width: 90rem;
   margin: 50px auto 0;
 
+  @media (max-width: 1024px) {
+    padding: 20px;
+    margin: 30px auto 0;
+  }
+
   @media (max-width: 425px) {
     padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 15px auto 0;
   }
 `;
 
@@ -199,6 +256,14 @@ export const ButtonSearch = styled.button`
   position: absolute;
   left: 90%;
 
+  @media (max-width: 425px) {
+    left: 90%;
+  }
+  @media (max-width: 425px) {
+    left: 90%;
+  }
+
+
   &:hover {
     transform: scale(1.1);
   }
@@ -214,6 +279,9 @@ export const Divider = styled.div`
 
 export const IconSearch = styled.img`
   width: 55px;
+  @media (max-width: 425px) {
+    width: 62px;
+  }
 `;
 
 export const ButtonHome = styled.button`
@@ -238,7 +306,7 @@ export const ButtonHome = styled.button`
   }
 
   @media (max-width: 425px) {
-    margin-right: 5px;
+    margin-bottom: 10px;
   }
 `;
 

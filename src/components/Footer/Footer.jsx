@@ -9,7 +9,6 @@ function Footer() {
         <FooterText>
           Direitos de imagem para Nintendo & The Pokémon Company
         </FooterText>
-        <FooterText>Dados pegos da API - pokeapi.co</FooterText>
         <FooterText>Desenvolvido por Lucas Zanin Dev Front-End</FooterText>
       </div>
       <MenuIcons />

@@ -7,6 +7,13 @@
   bottom: 0;
 }
 
+@media (max-width: 425px) {
+  .waves {
+    height: 8rem;
+    min-height: 8rem;
+  }
+}
+
 .parallax > use {
   animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
@@ -32,12 +39,5 @@
   }
   100% {
     transform: translate3d(85px, 0, 0);
-  }
-}
-
-@media (max-width: 500px) {
-  .waves {
-    height: 2.5rem;
-    min-height: 2.5rem;
   }
 }

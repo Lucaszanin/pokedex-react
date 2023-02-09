@@ -14,7 +14,9 @@ export const InputSearch = styled.input`
   width: 30rem;
   color: white;
   background-color: #333;
-  border: 2px solid #586080;
+  border-left: 2px solid #586080;
+  border-top: 2px solid #586080;
+  border-bottom: 2px solid #586080;
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
 
@@ -24,6 +26,13 @@ export const InputSearch = styled.input`
   }
 
   @media (max-width: 425px) {
-    width: 15rem;
+    width: 23rem;
+  }
+  @media (max-width: 375px) {
+    width: 19rem;
+  }
+
+  @media (max-width: 320px) {
+    width: 15.5rem;
   }
 `;

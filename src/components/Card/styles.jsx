@@ -9,6 +9,10 @@ export const CardContainer = styled.div`
   margin-top: 70px;
   transform: scale(0.5);
   animation: AnimeCard 1.2s forwards;
+
+  @media (max-width: 320px) {
+    padding: 0;
+  }
 `;
 
 export const CardContent = styled.div`
@@ -24,7 +28,6 @@ export const CardContent = styled.div`
   height: 300px;
   box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.8);
   margin-top: 70px;
-
 `;
 
 export const ImagemPokemon = styled.img`

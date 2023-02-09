@@ -8,7 +8,6 @@ export const Menu = styled.nav`
 export const MenuList = styled.ul`
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 `;
 
 export const ImgsItem = styled.img`
