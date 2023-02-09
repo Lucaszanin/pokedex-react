@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   max-width: 80rem;
-  padding: 40px;
+  padding: 5px 40px;
   display: flex;
   align-items: center;
   margin: 0 auto;
