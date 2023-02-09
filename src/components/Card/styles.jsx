@@ -1,4 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+export const CardContainer = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  padding: 0 50px;
+  margin-top: 70px;
+  transform: scale(0.5);
+  animation: AnimeCard 1.2s forwards;
+`;
 
 export const CardContent = styled.div`
   background: #353d64;
@@ -13,6 +24,7 @@ export const CardContent = styled.div`
   height: 300px;
   box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.8);
   margin-top: 70px;
+
 `;
 
 export const ImagemPokemon = styled.img`

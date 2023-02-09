@@ -1,12 +1,18 @@
-import React from 'react'
-import './Input.css';
+import React from "react";
+import { InputContainer, InputSearch } from "./styles";
 
-function Input() {
+function Input({ onChange, value }) {
+
   return (
-    <div className="main-container">
-        <input type='text' placeholder='Pesquisar Pokemon por Id ou Nome'/>
-    </div>
-  )
+      <InputContainer>
+        <InputSearch
+          type="text"
+          placeholder="Digite o nome de um pokemon para pesquisa-lo"
+          onChange={onChange}
+          value={value}
+        />
+      </InputContainer>
+  );
 }
 
-export default Input
+export default Input;

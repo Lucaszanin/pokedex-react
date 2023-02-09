@@ -11,11 +11,12 @@ import {
   PokemonName,
   TypePokemon,
   NameType,
+  CardContainer
 } from "./styles";
 
 function Card({ id, name, img, type, type2 }) {
   return (
-    <div className="container">
+    <CardContainer>
       <CardContent>
         <ImagemPokemon src={img} alt="Foto do Pokemon" />
         <Details>
@@ -38,7 +39,7 @@ function Card({ id, name, img, type, type2 }) {
 
         <ButtonDetails>Mais Detalhes</ButtonDetails>
       </CardContent>
-    </div>
+    </CardContainer>
   );
 }
 
