@@ -7,6 +7,11 @@ export const ContainerHome = styled.div`
   align-items: center;
   position: relative;
   justify-content: space-between;
+
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 `;
 
 export const PokebolaBackgroundLeft = styled.img`
@@ -30,7 +35,12 @@ export const PokebolaBackgroundRigth = styled.img`
 export const ContentLeft = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  width: 50%;
+
+  @media (max-width: 1024px) {
+    align-items: center;
+  }
 `;
 
 export const SubTitle = styled.h2`
@@ -48,6 +58,12 @@ export const DividerHero = styled.div`
   background-color: #586080;
   height: 70vh;
   border-radius: 80%;
+
+  @media (max-width: 1024px) {
+    margin: 20px 0;
+    width: 70vw;
+    height: 2px;
+  }
 `;
 
 export const ImgDivider = styled.img`
@@ -55,6 +71,12 @@ export const ImgDivider = styled.img`
   position: absolute;
   top: 33vh;
   right: -1vw;
+
+  @media (max-width: 1024px) {
+    top: -24px;
+    left: 50%;
+    width: 5vw;
+  }
 `;
 
 export const Hero = styled.div`
@@ -67,6 +89,10 @@ export const HeroImg = styled.img`
   transform: translateY(0px);
   animation: floatHero 4s ease-in-out infinite;
   filter: drop-shadow(17px 13px 19px #000);
+
+  @media (max-width: 1024px) {
+    max-width: 50vw;
+  }
 `;
 
 export const Title = styled.h1`
@@ -79,6 +105,14 @@ export const Title = styled.h1`
   font-weight: 800;
   color: #f6b915;
   filter: drop-shadow(25px 10px 4px #2b2a2a);
+
+  @media (max-width: 1024px) {
+    font-size: 90px;
+  }
+
+  @media (max-width: 425px) {
+    font-size: 50px;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
@@ -122,10 +156,21 @@ export const ButtonViewMore = styled.button`
 
 export const CardWrapper = styled.div`
   max-width: 90rem;
-
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(4, 1fr);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 425px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 export const ContainerSearch = styled.div`
@@ -134,6 +179,10 @@ export const ContainerSearch = styled.div`
   justify-content: flex-start;
   max-width: 90rem;
   margin: 50px auto 0;
+
+  @media (max-width: 425px) {
+    padding: 20px;
+  }
 `;
 
 export const WrapperInput = styled.div`
@@ -187,6 +236,10 @@ export const ButtonHome = styled.button`
   &:hover {
     box-shadow: 1px 1px 10px #7e63f7;
   }
+
+  @media (max-width: 425px) {
+    margin-right: 5px;
+  }
 `;
 
 export const IconHome = styled.img`
@@ -200,4 +253,7 @@ export const LinkWrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 40px;
+  @media (max-width: 425px) {
+    margin-left: 0;
+  }
 `;
