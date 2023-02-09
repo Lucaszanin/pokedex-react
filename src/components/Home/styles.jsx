@@ -103,20 +103,26 @@ export const ButtonViewMore = styled.button`
   padding: 5px 25px;
   font-size: 25px;
   color: #fff;
-  background: #fc1c1c;
+  background: rgb(53, 61, 100);
+  background: linear-gradient(
+    137deg,
+    rgba(53, 61, 100, 1) 0%,
+    rgba(43, 49, 81, 1) 100%
+  );
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.4s ease-in;
+  filter: drop-shadow(2px 1px 1px #e6e6e957);
 
   &:hover {
-    filter: drop-shadow(5px 5px 10px #be0404);
+    filter: drop-shadow(5px 5px 10px #3815fc);
   }
 `;
 
 export const CardWrapper = styled.div`
   max-width: 90rem;
-  padding-top: 100px;
+
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(4, 1fr);
@@ -126,18 +132,23 @@ export const ContainerSearch = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  position: relative;
   max-width: 90rem;
-  margin: 0 auto;
+  margin: 50px auto 0;
+`;
+
+export const WrapperInput = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 `;
 
 export const ButtonSearch = styled.button`
   background: transparent;
-  padding: 10px 15px;
   cursor: pointer;
   transition: all 0.2s ease-in;
   position: absolute;
-  left: 29rem;
+  left: 90%;
 
   &:hover {
     transform: scale(1.1);
@@ -147,11 +158,46 @@ export const ButtonSearch = styled.button`
 export const Divider = styled.div`
   max-width: 85rem;
   height: 1px;
-  margin: 20px auto 0;
+  margin: 20px auto 10px;
   background: #f7f5f51f;
   box-shadow: 5px -1px 7px #7e63f7;
 `;
 
 export const IconSearch = styled.img`
-  width: 70px;
+  width: 55px;
+`;
+
+export const ButtonHome = styled.button`
+  text-decoration: none;
+  display: flex;
+  font-weight: 700;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  background: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 5px 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  &:hover {
+    box-shadow: 1px 1px 10px #7e63f7;
+  }
+`;
+
+export const IconHome = styled.img`
+  width: 40px;
+  margin-right: 8px;
+  cursor: pointer;
+`;
+
+export const LinkWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
 `;

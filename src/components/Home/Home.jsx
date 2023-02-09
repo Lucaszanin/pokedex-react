@@ -5,8 +5,9 @@ import Card from "../Card/Card";
 import Input from "../Input/Input";
 import Header from "../Header/Header";
 import { Waves } from "../Waves/Waves";
-import estrela from "./assets/estrela.png";
+import searchIcon from "./assets/search.png";
 import heroImg from "./assets/hero.png";
+import HomeIcon from "./assets/home.png";
 import pokebolaBackground from "./assets/pokebola-contorno.png";
 import pokebola from "./assets/pokebola.png";
 import pokebolaIcon from "./assets/pokebola.png";
@@ -30,6 +31,10 @@ import {
   ImgDivider,
   Hero,
   HeroImg,
+  ButtonHome,
+  IconHome,
+  LinkWrapper,
+  WrapperInput,
 } from "./styles";
 import Footer from "../Footer/Footer";
 
@@ -62,19 +67,34 @@ function Home() {
   }, [pokemonList]);
 
   async function handleClick() {
-    const { url, options } = GET_POKEMON(`${pokemonName}`);
+    const { url, options } = GET_POKEMON(`${pokemonName.toLowerCase()}`);
     const { json } = await request(url, options);
     setPokemon(json);
     setPokemons([]);
+    setPokemonName("");
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     setPokemons([]);
+    setPokemonName("");
+  }
+
+  function handleChange({ target }) {
+    setPokemonName(target.value);
   }
 
   function ViewMore() {
     setOfsset(offset + 8);
+  }
+
+  async function homeFunction() {
+    pokemonList?.forEach(async (pokemon) => {
+      const response = await fetch(pokemon?.url);
+      const json = await response.json();
+      setPokemons((prev) => [...prev, json]);
+    });
+    setPokemon([]);
   }
 
   return (
@@ -96,21 +116,24 @@ function Home() {
       </ContainerHome>
       <Waves />
 
-      <form onSubmit={handleSubmit}>
-        <ContainerSearch>
-          <Input
-            onChange={({ target }) => {
-              setPokemonName(target.value.toLowerCase());
-            }}
-            value={pokemonName}
-          />
+      <ContainerSearch>
+        <LinkWrapper>
+          <ButtonHome onClick={homeFunction}>
+            <IconHome src={HomeIcon} alt="" />
+            <span>Home</span>
+          </ButtonHome>
+        </LinkWrapper>
+        <form onSubmit={handleSubmit}>
+          <WrapperInput>
+            <Input onChange={handleChange} value={pokemonName} />
+            <ButtonSearch onClick={handleClick}>
+              <IconSearch src={searchIcon} alt="" />
+            </ButtonSearch>
+          </WrapperInput>
+        </form>
+      </ContainerSearch>
+      <Divider />
 
-          <ButtonSearch onClick={handleClick}>
-            <IconSearch src={estrela} alt="" />
-          </ButtonSearch>
-        </ContainerSearch>
-        <Divider />
-      </form>
       <CardWrapper>
         {loading && <Loading />}
         {pokemons &&
@@ -125,6 +148,7 @@ function Home() {
             />
           ))}
 
+        {loading && <Loading />}
         {pokemon.length === 0 ? (
           <div></div>
         ) : (

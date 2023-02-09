@@ -1,6 +1,6 @@
 import React from "react";
 import MenuIcons from "../Menu/Menu";
-import Logo from "./Assets/logo.svg";
+import Logo from "./Assets/logo.png";
 import { HeaderContainer, LogoPokedex } from "./styles";
 
 function Header() {

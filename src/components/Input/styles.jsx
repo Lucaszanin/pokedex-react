@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const InputContainer = styled.div`
   max-width: 74rem;
-  padding: 0 40px;
-  margin-top: 30px;
+  padding: 0 0 0 40px;
 `;
 
 export const InputSearch = styled.input`
