@@ -31,6 +31,7 @@ import {
   Hero,
   HeroImg,
 } from "./styles";
+import Footer from "../Footer/Footer";
 
 function Home() {
   const { request, loading, data } = useFetch();
@@ -143,6 +144,7 @@ function Home() {
         </ButtonViewMore>
       </ButtonWrapper>
       <Divider />
+      <Footer />
     </>
   );
 }
