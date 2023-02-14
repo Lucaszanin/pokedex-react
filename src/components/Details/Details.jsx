@@ -93,20 +93,9 @@ function Details() {
         </DetailAbitities>
         <Detail>
           <DetailText>
-            <SpanDetail> ▶ Static</SpanDetail>- Wenn ein Pokémon mit dieser
-            Fähigkeit von einer Attacke mit Kontakt getroffen wird, besteht eine
-            30% Chance, dass der Angreifer paralysiert wird.\n\nPokémon die
-            immun gegen electric Attacken sind können trotzdem von dieser
-            Fähigkeit paralysiert werden.\n\nAußerhalb vom Kampf: Wenn ein
-            Pokémon mit dieser Fähigkeit an erster Stelle im Team steht, besteht
-            eine 50% Chance einem electric Pokémon zu begegnen, falls es welche
-            gibt.
-          </DetailText>
-          <DetailText>
-            <SpanDetail> ▶ Lightning-Rod</SpanDetail>- Betrifft keine
-            electric-Attacken die keinen Schaden anrichten, wie thunder wave.
-            Erhöht die Anzahl an Trainer-Anrufen wenn irgendein Pokémon im Team
-            diese Fähigkeit hat.
+            <SpanDetail>
+              ▶ {data?.abilities?.map(({ ability }) => ability.name.replace('-',' '))}
+            </SpanDetail>
           </DetailText>
         </Detail>
         <TitleDetail>Evolution 📈</TitleDetail>

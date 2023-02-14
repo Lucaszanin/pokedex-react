@@ -68,7 +68,7 @@ export const DivAnimateImg = styled.div`
 export const PokemonId = styled.p`
   color: rgb(247, 186, 21);
   font-weight: 600;
-  font-size: 25px;
+  font-size: 45px;
   font-family: Arial, Helvetica, sans-serif;
 `;
 
@@ -76,7 +76,7 @@ export const PokemonName = styled.span`
   color: #fff;
   text-transform: capitalize;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 35px;
   font-family: Arial, Helvetica, sans-serif;
 `;
 
@@ -107,10 +107,13 @@ export const ImageWrapper = styled.div`
 export const PokemonImage = styled.img`
   width: 450px;
   margin-top: 30px;
+  z-index: 5;
+  filter: drop-shadow(20px 20px 3px #232323);
 `;
 
 export const DetailsWrapper = styled.div`
   display: flex;
+  width: 90rem;
   justify-content: center;
   align-items: center;
   padding: 40px;
@@ -119,13 +122,13 @@ export const DetailsWrapper = styled.div`
 export const DetailsLeft = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
 `;
 
 export const DetailsRigth = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 30%;
 `;
 
 export const Detail = styled.div`
@@ -135,7 +138,7 @@ export const Detail = styled.div`
 `;
 
 export const SpanDetail = styled.span`
-  color: #fff;
+  color: #f7ba15;
   font-weight: 700;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
@@ -146,8 +149,8 @@ export const TitleDetail = styled.h1`
   display: flex;
   justify-content: center;
   font-weight: 700;
-  font-size: 30px;
-  margin-top: 20px;
+  font-size: 40px;
+  margin-top: 40px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
 `;
