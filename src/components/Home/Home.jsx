@@ -39,7 +39,7 @@ import {
 import Footer from "../Footer/Footer";
 
 function Home() {
-  const { request, loading, data } = useFetch();
+  const { request, loading, error } = useFetch();
   const [pokemonList, setPokemonList] = useState([]);
   const [pokemons, setPokemons] = useState([]);
   const [pokemon, setPokemon] = useState([]);
@@ -67,11 +67,18 @@ function Home() {
   }, [pokemonList]);
 
   async function handleClick() {
-    const { url, options } = GET_POKEMON(`${pokemonName.toLowerCase()}`);
-    const { json } = await request(url, options);
-    setPokemon(json);
-    setPokemons([]);
-    setPokemonName("");
+    let json;
+    let response;
+    try {
+      const { url, options } = GET_POKEMON(`${pokemonName.toLowerCase()}`);
+      ({ json, response } = await request(url, options));
+    } catch (error) {
+      if (response.status === 404) return null;
+    } finally {
+      setPokemon(json);
+      setPokemons([]);
+      setPokemonName("");
+    }
   }
 
   function handleSubmit(event) {
@@ -97,7 +104,6 @@ function Home() {
     setPokemon([]);
     console.log("Offset Atual", offset, "PokemonList", pokemonList);
   }
-
   return (
     <>
       <Header />
@@ -134,7 +140,6 @@ function Home() {
         </form>
       </ContainerSearch>
       <Divider />
-
       <CardWrapper>
         {loading && <Loading />}
         {pokemons &&
@@ -150,9 +155,7 @@ function Home() {
           ))}
 
         {loading && <Loading />}
-        {pokemon.length === 0 ? (
-          <div></div>
-        ) : (
+        {pokemon.length === 0 ? null : (
           <Card
             id={pokemon?.id}
             name={pokemon?.name}

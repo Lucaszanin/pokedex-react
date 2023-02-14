@@ -37,6 +37,7 @@ export const ImagemPokemon = styled.img`
   z-index: 1;
   width: 250px;
   height: 250px;
+  cursor: pointer;
   filter: drop-shadow(8px 9px 14px #232323);
   transition: all 0.3s ease-in;
   &:hover {
@@ -74,7 +75,7 @@ export const ButtonDetails = styled.button`
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px 15px;
   border-radius: 50px;
-  margin-top: 30px;
+  margin-top: 50px;
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 5px 10px 4px -5px rgba(0, 0, 0, 0.5);

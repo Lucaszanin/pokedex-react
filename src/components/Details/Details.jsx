@@ -40,7 +40,6 @@ function Details() {
     request(url, options);
   }, [request]);
 
-  console.log(data);
 
   if (loading) return <Loading />;
   return (

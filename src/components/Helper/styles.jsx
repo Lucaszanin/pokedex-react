@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 export const LoadingWrapper = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   padding: 40px;
-  width: 100%;
+  width: 100vw;
 `;
 
 export const ImgLoading = styled.img`
   width: 300px;
-  height: 300px;
 `;
+

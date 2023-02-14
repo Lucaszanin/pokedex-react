@@ -18,7 +18,9 @@ function Card({ id, name, img, type, type2 }) {
   return (
     <CardContainer>
       <CardContent>
+        <Link to={`/pokemon/${name}`}>
         <ImagemPokemon src={img} alt="Foto do Pokemon" />
+        </Link>
         <Details>
           <PokemonId>#{id}</PokemonId>
           <PokemonName>{name}</PokemonName>
