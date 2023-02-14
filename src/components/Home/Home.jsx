@@ -12,6 +12,7 @@ import pokebolaBackground from "./assets/pokebola-contorno.png";
 import pokebola from "./assets/pokebola.png";
 import pokebolaIcon from "./assets/pokebola.png";
 import Loading from "../Helper/Loading";
+import Error from "../Helper/Error";
 import {
   ButtonSearch,
   ButtonViewMore,
@@ -69,19 +70,18 @@ function Home() {
   async function handleClick() {
     let json;
     let response;
-    try {
-      const { url, options } = GET_POKEMON(`${pokemonName.toLowerCase()}`);
-      ({ json, response } = await request(url, options));
-    } catch (error) {
-      if (response.status === 404) return null;
-    } finally {
-      setPokemon(json);
-      setPokemons([]);
-      setPokemonName("");
+    const { url, options } = GET_POKEMON(`${pokemonName.toLowerCase()}`);
+    ({ json, response } = await request(url, options));
+
+    {
+      if (response.ok) setPokemon(json);
+      if (response.ok === false) return <Error />;
     }
+    setPokemons([]);
+    setPokemonName("");
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     setPokemons([]);
     setPokemonName("");
