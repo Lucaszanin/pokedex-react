@@ -75,7 +75,9 @@ function Home() {
 
     {
       if (response.ok) setPokemon(json);
-      if (response.ok === false) return <Error />;
+      if (response.ok === false) {
+        setPokemon([]);
+      }
     }
     setPokemons([]);
     setPokemonName("");
