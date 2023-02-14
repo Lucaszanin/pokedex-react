@@ -7,7 +7,7 @@ function Input({ onChange, value }) {
       <InputContainer>
         <InputSearch
           type="text"
-          placeholder="Digite um nome para pesquisar"
+          placeholder="Pesquisar Pokemon"
           onChange={onChange}
           value={value}
         />
