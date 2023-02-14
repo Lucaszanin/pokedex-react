@@ -1,5 +1,6 @@
 import React from "react";
 import MenuIcons from "../Menu/Menu";
+import BackTopButton from "../BackTopButton/BackTopButton";
 import { FooterContainer, FooterText } from "./styles";
 
 function Footer() {
@@ -12,6 +13,7 @@ function Footer() {
         <FooterText>Desenvolvido por Lucas Zanin Dev Front-End</FooterText>
       </div>
       <MenuIcons />
+      <BackTopButton />
     </FooterContainer>
   );
 }
