@@ -1,5 +1,5 @@
-import fire from "../Card/TypesPokemon/Assets/pokemonTypes/fire.svg";
 import { PokemonType } from "./TypesPokemon/PokemonType";
+import { Link } from "react-router-dom";
 
 import {
   ButtonDetails,
@@ -11,7 +11,7 @@ import {
   PokemonName,
   TypePokemon,
   NameType,
-  CardContainer
+  CardContainer,
 } from "./styles";
 
 function Card({ id, name, img, type, type2 }) {
@@ -36,8 +36,9 @@ function Card({ id, name, img, type, type2 }) {
             ) : null}
           </TypePokemon>
         </Details>
-
-        <ButtonDetails>Mais Detalhes</ButtonDetails>
+        <Link to={`/pokemon/${name}`}>
+          <ButtonDetails>Mais Detalhes</ButtonDetails>
+        </Link>
       </CardContent>
     </CardContainer>
   );

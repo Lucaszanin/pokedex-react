@@ -94,9 +94,12 @@ function Home() {
       const json = await response.json();
       setPokemons((prev) => [...prev, json]);
     });
+    setOfsset(0);
     setPokemon([]);
+    console.log("Offset Atual", offset, "PokemonList", pokemonList);
   }
 
+  
   return (
     <>
       <Header />

@@ -1,12 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Card from "./components/Card/Card";
+import Details from "./components/Details/Details";
 import Home from "./components/Home/Home";
 
 function App() {
   return (
     <>
-      <Home />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/pokemon/:name" element={<Details />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
