@@ -106,7 +106,7 @@ function Home() {
         <PokebolaBackgroundRigth src={pokebolaBackground} alt="Pokebola" />
         <ContentLeft>
           <SubTitle>Welcome to</SubTitle>
-          <Title>Pokedex</Title>
+          <Title>Pokédex</Title>
         </ContentLeft>
         <DividerHero>
           <ImgDivider src={pokebola} alt="Pokebola" />
