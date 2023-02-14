@@ -68,6 +68,7 @@ export const DivAnimateImg = styled.div`
 export const PokemonId = styled.p`
   color: rgb(247, 186, 21);
   font-weight: 600;
+  margin: 0;
   font-size: 45px;
   font-family: Arial, Helvetica, sans-serif;
 `;
@@ -83,7 +84,7 @@ export const PokemonName = styled.span`
 export const PokemonNameBig = styled.span`
   color: #1f75cc2f;
   font-weight: 600;
-  font-size: 13rem;
+  font-size: 12rem;
   text-align: center;
   display: flex;
   width: 100%;

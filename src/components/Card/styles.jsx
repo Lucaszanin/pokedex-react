@@ -108,6 +108,7 @@ export const TypePokemon = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   padding: 10px 15px;
   border-radius: 50px;
+  max-height: 35px;
   text-transform: capitalize;
 `;
 
