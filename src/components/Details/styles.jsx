@@ -175,6 +175,16 @@ export const DetailMoves = styled.div`
   font-family: Arial, Helvetica, sans-serif;
 `;
 
+export const AnimeteImgPokemon = styled.div`
+  animation: is-rotating 2s infinite;
+  border: 6px solid transparent;
+  border-radius: 50%;
+  border-top-color: #c0bfc25f;
+  width: 500px;
+  height: 500px;
+  position: absolute;
+`;
+
 export const WrapperEvolution = styled.div`
   display: flex;
   justify-content: flex-start;

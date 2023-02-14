@@ -85,3 +85,9 @@ body {
     transform: initial;
   }
 }
+
+@keyframes is-rotating {
+  to {
+    transform: rotate(1turn);
+  }
+}

@@ -26,6 +26,7 @@ import {
   DetailAbitities,
   PokemonNameBig,
   DetailMoves,
+  AnimeteImgPokemon,
 } from "./styles";
 import pokebolaBackground from "../Home/assets/pokebola-contorno.png";
 
@@ -54,6 +55,7 @@ function Details() {
         </div>
         <ImageWrapper>
           <PokemonNameBig>{data?.name}</PokemonNameBig>
+          <AnimeteImgPokemon></AnimeteImgPokemon>
           <PokemonImage
             src={data?.sprites?.other?.dream_world?.front_default}
             alt="Imagem do Pokemon"
@@ -71,14 +73,16 @@ function Details() {
               <DetailText>▶ {data?.weight / 10} Kg</DetailText>
             </Detail>
             <Detail>
-              <SpanDetail>Type  ▶</SpanDetail>
-                {data?.types?.map(({ type }) => <DetailText>{type.name}</DetailText>)}
+              <SpanDetail>Type ▶</SpanDetail>
+              {data?.types?.map(({ type }) => (
+                <DetailText>{type.name}</DetailText>
+              ))}
             </Detail>
           </DetailsLeft>
           <DetailsRigth>
             <SpanDetail>Moves ▶</SpanDetail>
             <DetailMoves>
-           {data?.moves?.map(({ move }) => (
+              {data?.moves?.map(({ move }) => (
                 <DetailText>{move.name}</DetailText>
               ))}
             </DetailMoves>
