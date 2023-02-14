@@ -84,7 +84,7 @@ export const PokemonName = styled.span`
 export const PokemonNameBig = styled.span`
   color: #1f75cc2f;
   font-weight: 600;
-  font-size: 12rem;
+  font-size: 13rem;
   text-align: center;
   display: flex;
   width: 100%;
