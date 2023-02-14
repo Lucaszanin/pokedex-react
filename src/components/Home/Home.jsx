@@ -156,8 +156,8 @@ function Home() {
           <Card
             id={pokemon?.id}
             name={pokemon?.name}
-            // type={pokemon?.types[0].type?.name}
-            // type2={pokemon?.types[1].type?.name}
+            type={pokemon?.types[0] && pokemon?.types[0].type?.name}
+            type2={pokemon?.types[1] && pokemon?.types[1].type?.name}
             img={pokemon?.sprites?.other?.dream_world?.front_default}
           />
         )}
