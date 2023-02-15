@@ -12,7 +12,7 @@ import pokebolaBackground from "./assets/pokebola-contorno.png";
 import pokebola from "./assets/pokebola.png";
 import pokebolaIcon from "./assets/pokebola.png";
 import Loading from "../Helper/Loading";
-import Error from "../Helper/Error";
+import Error from "../Helper/Error/Error";
 import {
   ButtonSearch,
   ButtonViewMore,
@@ -74,7 +74,10 @@ function Home() {
     ({ json, response } = await request(url, options));
 
     {
-      if (response.ok) setPokemon(json);
+      if (response.ok) {
+        setPokemon(json)
+        error = null
+      };
       if (response.ok === false) {
         setPokemon([]);
       }
@@ -104,7 +107,6 @@ function Home() {
       setPokemons((prev) => [...prev, json]);
     });
     setPokemon([]);
-    console.log("Offset Atual", offset, "PokemonList", pokemonList);
   }
   return (
     <>
@@ -143,6 +145,7 @@ function Home() {
       </ContainerSearch>
       <Divider />
       <CardWrapper>
+        {error && <Error />}
         {loading && <Loading />}
         {pokemons &&
           pokemons.map(({ name, id, types, sprites }, index) => (
