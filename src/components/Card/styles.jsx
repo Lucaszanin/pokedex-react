@@ -8,7 +8,7 @@ export const CardContainer = styled.div`
   padding: 0 50px;
   margin-top: 70px;
   transform: scale(0.5);
-  animation: AnimeCard .5s forwards;
+  animation: AnimeCard 0.5s forwards;
 
   @media (max-width: 320px) {
     padding: 0;
@@ -40,8 +40,10 @@ export const ImagemPokemon = styled.img`
   cursor: pointer;
   filter: drop-shadow(8px 9px 14px #232323);
   transition: all 0.3s ease-in;
+  filter: grayscale(100%);
   &:hover {
     transform: scale(1.2);
+    filter: grayscale(0);
   }
 `;
 

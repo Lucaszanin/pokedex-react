@@ -56,18 +56,17 @@ function Home() {
       setPokemonList(json.results);
     }
     getPokemons();
-  }, [offset,request]);
+  }, [offset, request]);
 
   useEffect(() => {
-    const getPokemon = () => {
-      pokemonList?.map(async ({ url }) => {
-        const response = await fetch(url);
-        const json = await response.json();
-        setPokemons((prev) => [...prev, json]);
-      });
-    };
-    getPokemon();
-  }, [pokemonList,request]);
+    const promisses = pokemonList?.map(async ({ url }) => {
+      const response = await fetch(url);
+      const json = await response.json();
+      const listPokemon = Promise.all(promisses);
+      setPokemons((prev) => [...prev,json]);
+      console.log(listPokemon);
+    });
+  }, [pokemonList, request]);
 
   async function handleClick() {
     let json;
