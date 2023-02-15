@@ -28,6 +28,7 @@ function useFetch() {
     data,
     loading,
     error,
+    setError,
     request,
   };
 }

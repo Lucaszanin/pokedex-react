@@ -10,6 +10,8 @@ export const InputContainer = styled.div`
 
 export const InputSearch = styled.input`
   height: 50px;
+  max-height: 50px;
+  padding: 10px;
   max-width: 30rem;
   width: 30rem;
   color: white;

@@ -8,7 +8,7 @@ export const CardContainer = styled.div`
   padding: 0 50px;
   margin-top: 70px;
   transform: scale(0.5);
-  animation: AnimeCard 1.2s forwards;
+  animation: AnimeCard .5s forwards;
 
   @media (max-width: 320px) {
     padding: 0;
@@ -87,15 +87,15 @@ export const ButtonDetails = styled.button`
 `;
 
 export const IconTypePokemon = styled.div`
-  box-shadow: 0 0 8px 0;
-  background: rgb(51, 51, 51);
-  backdrop-filter: blur(20px);
+  background: linear-gradient(rgb(21, 26, 55) 0%, rgba(21, 26, 55, 0) 100%);
+  border: 1px solid rgb(36, 41, 63);
   border-radius: 10px;
   display: flex;
   padding: 6px 8px;
   width: 90px;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
   &:first-child {
     margin-right: 10px;
   }

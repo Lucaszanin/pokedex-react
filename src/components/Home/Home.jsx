@@ -2,45 +2,29 @@ import { useEffect, useState } from "react";
 import { GET_POKEMON, GET_POKEMONS } from "../../API/Api";
 import useFetch from "../../Hooks/useFetch";
 import Card from "../Card/Card";
-import Input from "../Input/Input";
+import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
+import Error from "../Helper/Error/Error";
+import Loading from "../Helper/Loading";
+import Input from "../Input/Input";
 import { Waves } from "../Waves/Waves";
-import searchIcon from "./assets/search.png";
 import heroImg from "./assets/hero.png";
 import HomeIcon from "./assets/home.png";
 import pokebolaBackground from "./assets/pokebola-contorno.png";
-import pokebola from "./assets/pokebola.png";
-import pokebolaIcon from "./assets/pokebola.png";
-import Loading from "../Helper/Loading";
-import Error from "../Helper/Error/Error";
+import { default as pokebola, default as pokebolaIcon } from "./assets/pokebola.png";
+import searchIcon from "./assets/search.png";
 import {
-  ButtonSearch,
+  ButtonHome, ButtonSearch,
   ButtonViewMore,
   ButtonWrapper,
-  CardWrapper,
-  ContainerSearch,
-  IconSearch,
-  Divider,
-  PokebolaIcon,
-  ContainerHome,
-  PokebolaBackgroundLeft,
-  PokebolaBackgroundRigth,
-  ContentLeft,
-  SubTitle,
-  Title,
-  DividerHero,
-  ImgDivider,
-  Hero,
-  HeroImg,
-  ButtonHome,
-  IconHome,
-  LinkWrapper,
-  WrapperInput,
+  CardWrapper, ContainerHome, ContainerSearch, ContentLeft, Divider, DividerHero, Hero,
+  HeroImg, IconHome, IconSearch, ImgDivider, LinkWrapper, PokebolaBackgroundLeft,
+  PokebolaBackgroundRigth, PokebolaIcon, SubTitle,
+  Title, WrapperInput
 } from "./styles";
-import Footer from "../Footer/Footer";
 
 function Home() {
-  const { request, loading, error } = useFetch();
+  const { request, loading, error, setError } = useFetch();
   const [pokemonList, setPokemonList] = useState([]);
   const [pokemons, setPokemons] = useState([]);
   const [pokemon, setPokemon] = useState([]);
@@ -54,16 +38,16 @@ function Home() {
       setPokemonList(json.results);
     }
     getPokemons();
-  }, [offset, request]);
+  }, [offset]);
 
   useEffect(() => {
-    function getPokemon() {
-      pokemonList?.forEach(async (pokemon) => {
-        const response = await fetch(pokemon?.url);
+    const getPokemon = () => {
+      pokemonList?.map(async ({ url }) => {
+        const response = await fetch(url);
         const json = await response.json();
         setPokemons((prev) => [...prev, json]);
       });
-    }
+    };
     getPokemon();
   }, [pokemonList]);
 
@@ -75,9 +59,8 @@ function Home() {
 
     {
       if (response.ok) {
-        setPokemon(json)
-        error = null
-      };
+        setPokemon(json);
+      }
       if (response.ok === false) {
         setPokemon([]);
       }
@@ -100,14 +83,21 @@ function Home() {
     setOfsset(offset + 8);
   }
 
-  async function homeFunction() {
+  function homeFunction() {
+    let json;
+    let response;
     pokemonList?.forEach(async (pokemon) => {
-      const response = await fetch(pokemon?.url);
-      const json = await response.json();
+      response = await fetch(pokemon?.url);
+      json = await response.json();
       setPokemons((prev) => [...prev, json]);
     });
     setPokemon([]);
+    setPokemonName("");
+    setOfsset(0);
+    setError(null);
   }
+
+  console.log("O ofsset está", offset);
   return (
     <>
       <Header />
@@ -145,7 +135,6 @@ function Home() {
       </ContainerSearch>
       <Divider />
       <CardWrapper>
-        {error && <Error />}
         {loading && <Loading />}
         {pokemons &&
           pokemons.map(({ name, id, types, sprites }, index) => (
@@ -159,6 +148,7 @@ function Home() {
             />
           ))}
 
+        {error && <Error error={error} />}
         {loading && <Loading />}
         {pokemon.length === 0 ? null : (
           <Card
