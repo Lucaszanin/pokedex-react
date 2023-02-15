@@ -11,16 +11,34 @@ import { Waves } from "../Waves/Waves";
 import heroImg from "./assets/hero.png";
 import HomeIcon from "./assets/home.png";
 import pokebolaBackground from "./assets/pokebola-contorno.png";
-import { default as pokebola, default as pokebolaIcon } from "./assets/pokebola.png";
+import {
+  default as pokebola,
+  default as pokebolaIcon,
+} from "./assets/pokebola.png";
 import searchIcon from "./assets/search.png";
 import {
-  ButtonHome, ButtonSearch,
+  ButtonHome,
+  ButtonSearch,
   ButtonViewMore,
   ButtonWrapper,
-  CardWrapper, ContainerHome, ContainerSearch, ContentLeft, Divider, DividerHero, Hero,
-  HeroImg, IconHome, IconSearch, ImgDivider, LinkWrapper, PokebolaBackgroundLeft,
-  PokebolaBackgroundRigth, PokebolaIcon, SubTitle,
-  Title, WrapperInput
+  CardWrapper,
+  ContainerHome,
+  ContainerSearch,
+  ContentLeft,
+  Divider,
+  DividerHero,
+  Hero,
+  HeroImg,
+  IconHome,
+  IconSearch,
+  ImgDivider,
+  LinkWrapper,
+  PokebolaBackgroundLeft,
+  PokebolaBackgroundRigth,
+  PokebolaIcon,
+  SubTitle,
+  Title,
+  WrapperInput,
 } from "./styles";
 
 function Home() {
@@ -38,7 +56,7 @@ function Home() {
       setPokemonList(json.results);
     }
     getPokemons();
-  }, [offset]);
+  }, [offset,request]);
 
   useEffect(() => {
     const getPokemon = () => {
@@ -49,7 +67,7 @@ function Home() {
       });
     };
     getPokemon();
-  }, [pokemonList]);
+  }, [pokemonList,request]);
 
   async function handleClick() {
     let json;
@@ -71,10 +89,10 @@ function Home() {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    setPokemons([]);
     setPokemonName("");
+    setOfsset(0);
   }
-
+  console.log(pokemons);
   function handleChange({ target }) {
     setPokemonName(target.value);
   }
@@ -84,15 +102,6 @@ function Home() {
   }
 
   function homeFunction() {
-    let json;
-    let response;
-    pokemonList?.forEach(async (pokemon) => {
-      response = await fetch(pokemon?.url);
-      json = await response.json();
-      setPokemons((prev) => [...prev, json]);
-    });
-    setPokemon([]);
-    setPokemonName("");
     setOfsset(0);
     setError(null);
   }
