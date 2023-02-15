@@ -40,7 +40,7 @@ export const ImagemPokemon = styled.img`
   cursor: pointer;
   filter: drop-shadow(8px 9px 14px #232323);
   transition: all 0.3s ease-in;
-  filter: grayscale(100%);
+  filter: grayscale(80%);
   &:hover {
     transform: scale(1.2);
     filter: grayscale(0);

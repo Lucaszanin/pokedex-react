@@ -186,12 +186,8 @@ export const ButtonViewMore = styled.button`
   padding: 5px 25px;
   font-size: 25px;
   color: #fff;
-  background: rgb(53, 61, 100);
-  background: linear-gradient(
-    137deg,
-    rgba(53, 61, 100, 1) 0%,
-    rgba(43, 49, 81, 1) 100%
-  );
+  background: linear-gradient(rgb(21, 26, 55) 0%, rgba(21, 26, 55, 0) 100%);
+  border: 1px solid rgb(36, 41, 63);
   border-radius: 10px;
   font-weight: 700;
   cursor: pointer;
@@ -263,14 +259,13 @@ export const ButtonSearch = styled.button`
     left: 90%;
   }
 
-
   &:hover {
     transform: scale(1.1);
   }
 `;
 
 export const Divider = styled.div`
-  max-width: 85rem;
+  max-width: 100%;
   height: 1px;
   margin: 20px auto 10px;
   background: #f7f5f51f;
