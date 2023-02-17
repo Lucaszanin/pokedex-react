@@ -27,6 +27,7 @@ import {
   PokemonNameBig,
   DetailMoves,
   AnimeteImgPokemon,
+  WrapperContentTop,
 } from "./styles";
 import pokebolaBackground from "../Home/assets/pokebola-contorno.png";
 
@@ -40,7 +41,6 @@ function Details() {
     request(url, options);
   }, [request]);
 
-
   if (loading) return <Loading />;
   return (
     <div>
@@ -48,10 +48,10 @@ function Details() {
       <PokebolaBackgroundLeft src={pokebolaBackground} alt="Pokebola" />
       <PokebolaBackgroundRigth src={pokebolaBackground} alt="Pokebola" />
       <Container className="animeLeft">
-        <div>
+        <WrapperContentTop>
           <PokemonId># {data?.id}</PokemonId>
           <PokemonName>{data?.name}</PokemonName>
-        </div>
+        </WrapperContentTop>
         <ImageWrapper>
           <PokemonNameBig>{data?.name}</PokemonNameBig>
           <AnimeteImgPokemon></AnimeteImgPokemon>
@@ -93,7 +93,10 @@ function Details() {
         <Detail>
           <DetailText>
             <SpanDetail>
-              ▶ {data?.abilities?.map(({ ability }) => ability.name.replace('-',' '))}
+              ▶{" "}
+              {data?.abilities?.map(({ ability }) =>
+                ability.name.replace("-", " ")
+              )}
             </SpanDetail>
           </DetailText>
         </Detail>
