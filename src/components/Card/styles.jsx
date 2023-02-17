@@ -95,7 +95,8 @@ export const IconTypePokemon = styled.div`
   display: flex;
   padding: 6px 8px;
   width: 90px;
-  height: 22px;
+  height: 30px;
+  max-height: 30px;
   justify-content: center;
   align-items: center;
   margin-top: 20px;

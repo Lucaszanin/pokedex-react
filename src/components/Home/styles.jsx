@@ -250,7 +250,8 @@ export const ButtonSearch = styled.button`
   cursor: pointer;
   transition: all 0.2s ease-in;
   position: absolute;
-  left: 90%;
+  left: 91%;
+  top: 0;
 
   @media (max-width: 425px) {
     left: 90%;
@@ -273,7 +274,7 @@ export const Divider = styled.div`
 `;
 
 export const IconSearch = styled.img`
-  width: 55px;
+  width: 51px;
   @media (max-width: 425px) {
     width: 62px;
   }

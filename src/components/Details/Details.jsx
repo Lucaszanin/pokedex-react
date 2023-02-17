@@ -20,9 +20,6 @@ import {
   SpanDetail,
   DetailText,
   Detail,
-  EvolutionImg,
-  WrapperEvolution,
-  EvolutionContorno,
   DetailAbitities,
   PokemonNameBig,
   DetailMoves,
@@ -60,7 +57,7 @@ function Details() {
             alt="Imagem do Pokemon"
           />
         </ImageWrapper>
-        <TitleDetail>About🗣</TitleDetail>
+        <TitleDetail>About</TitleDetail>
         <DetailsWrapper>
           <DetailsLeft>
             <Detail>
@@ -88,7 +85,7 @@ function Details() {
           </DetailsRigth>
         </DetailsWrapper>
         <DetailAbitities>
-          <TitleDetail>Abilites🏋️‍♂️</TitleDetail>
+          <TitleDetail>Abilites</TitleDetail>
         </DetailAbitities>
         <Detail>
           <DetailText>
@@ -100,21 +97,6 @@ function Details() {
             </SpanDetail>
           </DetailText>
         </Detail>
-        <TitleDetail>Evolution 📈</TitleDetail>
-        <WrapperEvolution>
-          <EvolutionContorno>
-            <EvolutionImg
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg"
-              alt=""
-            />
-          </EvolutionContorno>
-          <EvolutionContorno>
-            <EvolutionImg
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/26.svg"
-              alt=""
-            />
-          </EvolutionContorno>
-        </WrapperEvolution>
       </Container>
       <Footer />
     </div>
