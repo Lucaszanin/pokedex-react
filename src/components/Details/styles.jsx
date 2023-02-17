@@ -137,6 +137,9 @@ export const PokemonImage = styled.img`
 
 export const WrapperContentTop = styled.div`
   padding: 20px;
+  @media (max-width: 450px) {
+    text-align: center;
+  }
 `;
 
 export const DetailsWrapper = styled.div`
@@ -152,7 +155,9 @@ export const DetailsWrapper = styled.div`
 
   @media (max-width: 450px) {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+    padding: 0;
   }
 `;
 
@@ -160,6 +165,10 @@ export const DetailsLeft = styled.div`
   display: flex;
   flex-direction: column;
   width: 70%;
+
+  @media (max-width: 768px) {
+    width: 50%;
+  }
 
   @media (max-width: 450px) {
     width: 100%;
@@ -169,9 +178,16 @@ export const DetailsLeft = styled.div`
 export const DetailsRigth = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 30%;
+
+  @media (max-width: 768px) {
+    width: 50%;
+  }
+
   @media (max-width: 450px) {
     width: 100%;
+    align-items: flex-start;
   }
 `;
 
@@ -204,7 +220,7 @@ export const DetailText = styled.p`
   font-weight: 300;
   font-size: 20px;
   text-transform: capitalize;
-  margin: 5px 0 0 10px;
+  margin: 5px 0 10px 10px;
   font-family: Arial, Helvetica, sans-serif;
 `;
 
@@ -216,10 +232,25 @@ export const DetailMoves = styled.div`
   width: 50%;
   height: 150px;
   overflow-y: scroll;
+  overflow-x: hidden;
   text-transform: capitalize;
   display: block;
   margin-left: -10px;
   font-family: Arial, Helvetica, sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1f75cc2f;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #f7ba15;
+    height: 70px;
+    border-radius: 50px;
+  }
 `;
 
 export const AnimeteImgPokemon = styled.div`
@@ -234,6 +265,16 @@ export const AnimeteImgPokemon = styled.div`
   @media (max-width: 550px) {
     width: 400px;
     height: 400px;
+  }
+
+  @media (max-width: 500px) {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media (max-width: 400px) {
+    width: 250px;
+    height: 250px;
   }
 `;
 
@@ -255,6 +296,11 @@ export const EvolutionContorno = styled.div`
   @media (max-width: 450px) {
     width: 150px;
     height: 150px;
+  }
+
+  @media (max-width: 375px) {
+    width: 100px;
+    height: 100px;
   }
 `;
 
@@ -281,5 +327,10 @@ export const EvolutionImg = styled.img`
   @media (max-width: 450px) {
     width: 150px;
     height: 150px;
+  }
+
+  @media (max-width: 375px) {
+    width: 100px;
+    height: 100px;
   }
 `;
