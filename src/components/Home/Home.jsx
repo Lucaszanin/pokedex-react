@@ -69,6 +69,7 @@ function Home() {
 
   async function handleClick() {
     let json;
+    setOfsset(0);
     let response;
     const { url, options } = GET_POKEMON(`${pokemonName.toLowerCase()}`);
     ({ json, response } = await request(url, options));
@@ -86,12 +87,13 @@ function Home() {
   }
 
   async function handleSubmit(event) {
+    setOfsset(0);
     event.preventDefault();
     setPokemonName("");
-    setOfsset(0);
   }
 
   function handleChange({ target }) {
+    setOfsset(0);
     setPokemonName(target.value);
   }
 
@@ -100,13 +102,12 @@ function Home() {
   }
 
   function homeFunction() {
-    setOfsset(0);
     setError(null);
     setPokemon([]);
     const promisses = pokemonList?.map(async ({ url }) => {
       const response = await fetch(url);
       const json = await response.json();
-      const listPokemon = Promise.all(promisses);
+      Promise.all(promisses);
       setPokemons((prev) => [...prev, json]);
     });
   }
