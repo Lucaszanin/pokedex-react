@@ -116,6 +116,15 @@ export const PokemonNameBig = styled.span`
   @media (max-width: 600px) {
     font-size: 4rem;
   }
+  @media (max-width: 425px) {
+    font-size: 3.5rem;
+  }
+  @media (max-width: 375px) {
+    font-size: 3rem;
+  }
+  @media (max-width: 320px) {
+    font-size: 2.6rem;
+  }
 `;
 
 export const ImageWrapper = styled.div`

@@ -30,12 +30,19 @@ import pokebolaBackground from "../Home/assets/pokebola-contorno.png";
 
 function Details() {
   const { name } = useParams();
-  const [pokemon, setPokemon] = useState();
   const { request, loading, data } = useFetch();
 
   useEffect(() => {
     const { url, options } = GET_POKEMON(name);
     request(url, options);
+
+    if (data) {
+      const { abilities } = data;
+      abilities?.forEach(async ({ ability }) => {
+        const response = await request(ability.url);
+        console.log(response);
+      });
+    }
   }, [request]);
 
   if (loading) return <Loading />;
@@ -70,16 +77,16 @@ function Details() {
             </Detail>
             <Detail>
               <SpanDetail>Type ▶</SpanDetail>
-              {data?.types?.map(({ type }) => (
-                <DetailText>{type.name}</DetailText>
+              {data?.types?.map(({ type }, index) => (
+                <DetailText key={index}>{type.name}</DetailText>
               ))}
             </Detail>
           </DetailsLeft>
           <DetailsRigth>
             <SpanDetail>Moves ▶</SpanDetail>
             <DetailMoves>
-              {data?.moves?.map(({ move }) => (
-                <DetailText>{move.name}</DetailText>
+              {data?.moves?.map(({ move }, index) => (
+                <DetailText key={index}>{move.name}</DetailText>
               ))}
             </DetailMoves>
           </DetailsRigth>

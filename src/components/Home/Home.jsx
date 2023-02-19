@@ -64,7 +64,6 @@ function Home() {
       const json = await response.json();
       const listPokemon = Promise.all(promisses);
       setPokemons((prev) => [...prev,json]);
-      console.log(listPokemon);
     });
   }, [pokemonList, request]);
 
@@ -91,7 +90,7 @@ function Home() {
     setPokemonName("");
     setOfsset(0);
   }
-  console.log(pokemons);
+
   function handleChange({ target }) {
     setPokemonName(target.value);
   }
@@ -105,7 +104,7 @@ function Home() {
     setError(null);
   }
 
-  console.log("O ofsset está", offset);
+
   return (
     <>
       <Header />
