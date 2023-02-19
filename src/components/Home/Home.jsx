@@ -63,7 +63,7 @@ function Home() {
       const response = await fetch(url);
       const json = await response.json();
       const listPokemon = Promise.all(promisses);
-      setPokemons((prev) => [...prev,json]);
+      setPokemons((prev) => [...prev, json]);
     });
   }, [pokemonList, request]);
 
@@ -102,8 +102,14 @@ function Home() {
   function homeFunction() {
     setOfsset(0);
     setError(null);
+    setPokemon([]);
+    const promisses = pokemonList?.map(async ({ url }) => {
+      const response = await fetch(url);
+      const json = await response.json();
+      const listPokemon = Promise.all(promisses);
+      setPokemons((prev) => [...prev, json]);
+    });
   }
-
 
   return (
     <>
