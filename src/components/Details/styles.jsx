@@ -87,7 +87,7 @@ export const PokemonName = styled.span`
 export const PokemonNameBig = styled.span`
   color: #1f75cc2f;
   font-weight: 800;
-  font-size: 10rem;
+  font-size: 12rem;
   text-align: center;
   display: flex;
   width: 100%;
@@ -100,7 +100,7 @@ export const PokemonNameBig = styled.span`
   text-shadow: 5px 5px #353d64;
   font-family: "Poppins", sans-serif;
 
-  @media (min-width: 1024px) {
+  @media (max-width: 1024px) {
     font-size: 9rem;
   }
 
@@ -176,7 +176,7 @@ export const DetailsWrapper = styled.div`
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 20px;
 
   @media (min-width: 1440px) {
