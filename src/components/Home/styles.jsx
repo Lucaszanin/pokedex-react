@@ -161,6 +161,7 @@ export const Title = styled.h1`
   @media (max-width: 425px) {
     font-size: 50px;
     margin-right: 0;
+    margin-top: 10px;
   }
 `;
 
@@ -257,10 +258,10 @@ export const ButtonSearch = styled.button`
     left: 87%;
   }
   @media (max-width: 375px) {
-    left: 84%;
+    left: 85%;
   }
   @media (max-width: 320px) {
-    left: 80%;
+    left: 82%;
   }
 
   &:hover {

@@ -31,10 +31,10 @@ export const InputSearch = styled.input`
     width: 23rem;
   }
   @media (max-width: 375px) {
-    width: 19rem;
+    width: 21rem;
   }
 
   @media (max-width: 320px) {
-    width: 15.5rem;
+    width: 17.5rem;
   }
 `;
