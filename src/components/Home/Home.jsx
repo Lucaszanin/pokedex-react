@@ -88,6 +88,7 @@ function Home() {
 
   async function handleSubmit(event) {
     setOfsset(0);
+    setPokemons([]);
     event.preventDefault();
     setPokemonName("");
   }
