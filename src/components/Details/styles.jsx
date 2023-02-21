@@ -230,6 +230,12 @@ export const SpanDetail = styled.span`
   font-family: "Poppins", sans-serif;
 `;
 
+export const MovesWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+`;
+
 export const TitleDetail = styled.h1`
   color: #fff;
   display: flex;

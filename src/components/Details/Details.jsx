@@ -32,6 +32,7 @@ import {
   TypePokemon,
   NameType,
   IconTypePokemon,
+  MovesWrapper,
 } from "./styles";
 import pokebolaBackground from "../Home/assets/pokebola-contorno.png";
 
@@ -100,7 +101,9 @@ function Details() {
             </Detail>
           </DetailsLeft>
           <DetailsRigth>
-            <SpanDetail>Moves ▶</SpanDetail>
+            <MovesWrapper>
+              <SpanDetail>Movements ▶</SpanDetail>
+            </MovesWrapper>
             <DetailMoves>
               {data?.moves?.map(({ move }, index) => (
                 <DetailTextMoves key={index}>{move.name}</DetailTextMoves>
@@ -109,7 +112,7 @@ function Details() {
           </DetailsRigth>
         </DetailsWrapper>
         <DetailAbitities>
-          <TitleDetail>Abilites</TitleDetail>
+          <TitleDetail>Skills</TitleDetail>
         </DetailAbitities>
         <Detail>
           <DetailText>
