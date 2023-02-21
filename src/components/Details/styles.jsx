@@ -100,16 +100,16 @@ export const PokemonNameBig = styled.span`
   text-shadow: 5px 5px #353d64;
   font-family: "Poppins", sans-serif;
 
-  @media (min-width: 1184px) {
-    font-size: 13rem;
-  }
-
-  @media (max-width: 900px) {
+  @media (min-width: 1024px) {
     font-size: 9rem;
   }
 
+  @media (max-width: 900px) {
+    font-size: 7.8rem;
+  }
+
   @media (max-width: 800px) {
-    font-size: 8rem;
+    font-size: 6rem;
   }
 
   @media (max-width: 740px) {
@@ -120,8 +120,12 @@ export const PokemonNameBig = styled.span`
     font-size: 4.5rem;
   }
 
+  @media (max-width: 430px) {
+    font-size: 3.5rem;
+  }
+
   @media (max-width: 375px) {
-    font-size: 3.3rem;
+    font-size: 3.1rem;
   }
 
   @media (max-width: 320px) {
@@ -314,11 +318,16 @@ export const AnimeteImgPokemon = styled.div`
   }
 
   @media (max-width: 500px) {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 375px) {
+    width: 350px;
+    height: 350px;
+  }
+
+  @media (max-width: 330px) {
     width: 250px;
     height: 250px;
   }
