@@ -363,6 +363,33 @@ export const ListDetails = styled.ul`
   align-items: flex-start;
   padding: 0;
   margin: 0;
+  width: 100%;
+  height: 100px;
+  overflow-y: scroll;
+  list-style: none;
+  overflow-x: hidden;
+  text-transform: capitalize;
+  display: block;
+  margin-left: -10px;
+  font-family: "Poppins", sans-serif;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #1f75cc2f;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #f7ba15;
+    height: 70px;
+    border-radius: 50px;
+  }
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
 `;
 
 export const ListItemDetails = styled.li`
