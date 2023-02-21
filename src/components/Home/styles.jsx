@@ -254,10 +254,13 @@ export const ButtonSearch = styled.button`
   top: 0;
 
   @media (max-width: 425px) {
-    left: 90%;
+    left: 87%;
   }
-  @media (max-width: 425px) {
-    left: 90%;
+  @media (max-width: 375px) {
+    left: 84%;
+  }
+  @media (max-width: 320px) {
+    left: 80%;
   }
 
   &:hover {
@@ -276,7 +279,7 @@ export const Divider = styled.div`
 export const IconSearch = styled.img`
   width: 51px;
   @media (max-width: 425px) {
-    width: 62px;
+    width: 52px;
   }
 `;
 
@@ -289,7 +292,7 @@ export const ButtonHome = styled.button`
   cursor: pointer;
   font-size: 18px;
   background: transparent;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 5px 10px;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(13.5px);

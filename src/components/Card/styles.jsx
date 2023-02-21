@@ -18,6 +18,9 @@ export const CardContainer = styled.div`
 export const CardContent = styled.div`
   background: #353d64;
   width: 250px;
+  max-width: 250px;
+  height: 300px;
+  max-height: 300px;
   display: flex;
   margin-bottom: 50px;
   flex-direction: column;
@@ -25,7 +28,6 @@ export const CardContent = styled.div`
   padding: 30px;
   border-radius: 40px;
   position: relative;
-  height: 300px;
   box-shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.8);
   margin-top: 70px;
 `;
@@ -59,14 +61,14 @@ export const PokemonName = styled.span`
   text-transform: capitalize;
   font-weight: 600;
   font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
 `;
 
 export const PokemonId = styled.p`
   color: rgb(247, 186, 21);
   font-weight: 600;
   font-size: 25px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
 `;
 
 export const ButtonDetails = styled.button`
@@ -74,10 +76,10 @@ export const ButtonDetails = styled.button`
   color: #333;
   font-weight: 600;
   font-size: 18px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 10px 15px;
   border-radius: 50px;
-  margin-top: 50px;
+  margin-top: 30px;
   transition: all 0.3s ease;
   cursor: pointer;
   box-shadow: 5px 10px 4px -5px rgba(0, 0, 0, 0.5);
@@ -110,7 +112,7 @@ export const TypePokemon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 10px 15px;
   border-radius: 50px;
   max-height: 35px;
@@ -120,7 +122,7 @@ export const TypePokemon = styled.div`
 export const NameType = styled.p`
   color: #ffff;
   align-items: center;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   text-transform: capitalize;
   margin-left: 5px;
 `;

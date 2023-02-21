@@ -19,7 +19,7 @@ export const FooterText = styled.p`
   font-size: 16px;
   line-height: 1.4;
   width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   color: #fff;
   font-weight: 400;
   @media (max-width: 425px) {

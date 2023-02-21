@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../Footer/Footer";
+import { PokemonType } from "../Card/TypesPokemon/PokemonType";
 import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
 import useFetch from "../../Hooks/useFetch";
@@ -25,29 +26,40 @@ import {
   DetailMoves,
   AnimeteImgPokemon,
   WrapperContentTop,
+  ListDetails,
+  ListItemDetails,
+  DetailTextMoves,
+  TypePokemon,
+  NameType,
+  IconTypePokemon,
 } from "./styles";
 import pokebolaBackground from "../Home/assets/pokebola-contorno.png";
 
 function Details() {
   const { name } = useParams();
   const { request, loading, data } = useFetch();
+  const [habilities, setHabilities] = useState([]);
 
   useEffect(() => {
     const { url, options } = GET_POKEMON(name);
     request(url, options);
+  }, [request, name]);
 
+  useEffect(() => {
     if (data) {
       const { abilities } = data;
-      abilities?.forEach(async ({ ability }) => {
-        const response = await request(ability.url);
-        console.log(response);
+      const promisses = abilities?.map(async ({ ability }) => {
+        const response = await fetch(ability.url);
+        const json = await response.json();
+        Promise.all(promisses);
+        setHabilities((prev) => [...prev, json?.effect_entries?.[1]?.effect]);
       });
     }
-  }, [request]);
+  }, [data]);
 
   if (loading) return <Loading />;
   return (
-    <div>
+    <>
       <Header />
       <PokebolaBackgroundLeft src={pokebolaBackground} alt="Pokebola" />
       <PokebolaBackgroundRigth src={pokebolaBackground} alt="Pokebola" />
@@ -68,17 +80,22 @@ function Details() {
         <DetailsWrapper>
           <DetailsLeft>
             <Detail>
-              <SpanDetail>Height </SpanDetail>
-              <DetailText>▶ {(data?.height / 10).toFixed()} m</DetailText>
+              <SpanDetail>Height ▶</SpanDetail>
+              <DetailText> {(data?.height / 10).toFixed()} m</DetailText>
             </Detail>
             <Detail>
-              <SpanDetail>Weigth </SpanDetail>
-              <DetailText>▶ {data?.weight / 10} Kg</DetailText>
+              <SpanDetail>Weigth ▶</SpanDetail>
+              <DetailText>{data?.weight / 10} Kg</DetailText>
             </Detail>
             <Detail>
-              <SpanDetail>Type ▶</SpanDetail>
+              <SpanDetail>Types ▶</SpanDetail>
               {data?.types?.map(({ type }, index) => (
-                <DetailText key={index}>{type.name}</DetailText>
+                <TypePokemon>
+                  <IconTypePokemon>
+                    <PokemonType type={type.name} />
+                    <NameType>{type.name}</NameType>
+                  </IconTypePokemon>
+                </TypePokemon>
               ))}
             </Detail>
           </DetailsLeft>
@@ -86,7 +103,7 @@ function Details() {
             <SpanDetail>Moves ▶</SpanDetail>
             <DetailMoves>
               {data?.moves?.map(({ move }, index) => (
-                <DetailText key={index}>{move.name}</DetailText>
+                <DetailTextMoves key={index}>{move.name}</DetailTextMoves>
               ))}
             </DetailMoves>
           </DetailsRigth>
@@ -97,16 +114,20 @@ function Details() {
         <Detail>
           <DetailText>
             <SpanDetail>
-              ▶{" "}
-              {data?.abilities?.map(({ ability }) =>
-                ability.name.replace("-", " ")
-              )}
+              <ListDetails>
+                {data?.abilities?.map(({ ability }, index) => (
+                  <ListItemDetails>
+                    {ability.name}
+                    <DetailText>{habilities[index]}</DetailText>
+                  </ListItemDetails>
+                ))}
+              </ListDetails>
             </SpanDetail>
           </DetailText>
         </Detail>
       </Container>
       <Footer />
-    </div>
+    </>
   );
 }
 
