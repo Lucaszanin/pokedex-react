@@ -220,7 +220,7 @@ export const CardWrapper = styled.div`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 676px) {
     grid-template-columns: 1fr;
   }
 `;

@@ -27,7 +27,7 @@ export const InputSearch = styled.input`
     box-shadow: 5px -1px 40px #6d4ff3;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: 656px) {
     width: 23rem;
   }
   @media (max-width: 375px) {
