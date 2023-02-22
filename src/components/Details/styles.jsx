@@ -4,7 +4,7 @@ export const PokebolaBackgroundLeft = styled.img`
   left: calc(100vw - 17%);
   width: 30vw;
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   opacity: 0.1;
 
   @media (max-width: 1024px) {
@@ -30,7 +30,7 @@ export const PokebolaBackgroundRigth = styled.img`
   right: calc(100vw - 17%);
   width: 30vw;
   position: fixed;
-  z-index: -1;
+  z-index: 0;
   opacity: 0.1;
   @media (max-width: 1024px) {
     width: 49vw;
@@ -57,6 +57,12 @@ export const Container = styled.div`
   @media (max-width: 425px) {
     padding: 20px;
   }
+`;
+
+export const DetailBody = styled.body`
+  background-color: #2b3151;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
 `;
 
 export const DivAnimateImg = styled.div`

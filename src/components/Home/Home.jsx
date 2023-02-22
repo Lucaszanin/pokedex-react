@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GET_POKEMON, GET_POKEMONS } from "../../API/Api";
+import { ThemeContext } from "../../Contexts/theme-context";
 import useFetch from "../../Hooks/useFetch";
 import Card from "../Card/Card";
 import Footer from "../Footer/Footer";
@@ -39,6 +40,7 @@ import {
   SubTitle,
   Title,
   WrapperInput,
+  HomeBody,
 } from "./styles";
 
 function Home() {
@@ -62,7 +64,7 @@ function Home() {
     const promisses = pokemonList?.map(async ({ url }) => {
       const response = await fetch(url);
       const json = await response.json();
-      const listPokemon = Promise.all(promisses);
+      Promise.all(promisses);
       setPokemons((prev) => [...prev, json]);
     });
   }, [pokemonList, request]);
@@ -113,8 +115,10 @@ function Home() {
     });
   }
 
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <>
+    <HomeBody style={{ color: theme.color, background: theme.background }}>
       <Header />
       <ContainerHome>
         <PokebolaBackgroundLeft src={pokebolaBackground} alt="Pokebola" />
@@ -183,7 +187,7 @@ function Home() {
       </ButtonWrapper>
       <Divider />
       <Footer />
-    </>
+    </HomeBody>
   );
 }
 

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Footer from "../Footer/Footer";
+import { ThemeContext } from "../../Contexts/theme-context";
 import { PokemonType } from "../Card/TypesPokemon/PokemonType";
 import { useParams } from "react-router-dom";
 import Header from "../Header/Header";
@@ -33,6 +34,7 @@ import {
   NameType,
   IconTypePokemon,
   MovesWrapper,
+  DetailBody,
 } from "./styles";
 import pokebolaBackground from "../Home/assets/pokebola-contorno.png";
 
@@ -58,9 +60,13 @@ function Details() {
     }
   }, [data]);
 
+  const { theme } = useContext(ThemeContext);
+
   if (loading) return <Loading />;
   return (
-    <>
+    <DetailBody
+      style={{ color: theme.color, backgroundColor: theme.background }}
+    >
       <Header />
       <PokebolaBackgroundLeft src={pokebolaBackground} alt="Pokebola" />
       <PokebolaBackgroundRigth src={pokebolaBackground} alt="Pokebola" />
@@ -130,7 +136,7 @@ function Details() {
         </Detail>
       </Container>
       <Footer />
-    </>
+    </DetailBody>
   );
 }
 

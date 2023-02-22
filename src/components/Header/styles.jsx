@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const TogglerContainer = styled.div`
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+`;
+
 export const HeaderContainer = styled.div`
   max-width: 80rem;
   padding: 5px 40px;

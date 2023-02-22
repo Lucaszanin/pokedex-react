@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import MenuIcons from "../Menu/Menu";
 import Logo from "./Assets/logo.png";
 import { Link } from "react-router-dom";
-import { HeaderContainer, LogoPokedex } from "./styles";
+import { HeaderContainer, LogoPokedex, TogglerContainer } from "./styles";
+import ThemeTogglerButton from "../Theme Toggler/ThemeTogglerButton";
 
 function Header() {
   return (
-    <HeaderContainer>
-      <Link to="/">
-        <LogoPokedex src={Logo} alt="" />
-      </Link>
-      <MenuIcons />
-    </HeaderContainer>
+    <>
+      <TogglerContainer>
+        <ThemeTogglerButton />
+      </TogglerContainer>
+      <HeaderContainer>
+        <Link to="/">
+          <LogoPokedex src={Logo} alt="" />
+        </Link>
+        <MenuIcons />
+      </HeaderContainer>
+    </>
   );
 }
 
