@@ -237,6 +237,8 @@ export const SpanDetail = styled.span`
   color: #f7ba15;
   font-weight: 700;
   font-size: 20px;
+  display: flex;
+  flex: 1;
   font-family: "Poppins", sans-serif;
 `;
 
@@ -369,6 +371,7 @@ export const DetailAbitities = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 `;
 
 export const ListDetails = styled.ul`
@@ -379,6 +382,7 @@ export const ListDetails = styled.ul`
   padding: 0;
   margin: 0;
   width: 100%;
+  max-width: 100%;
   height: 100px;
   overflow-y: scroll;
   list-style: none;
