@@ -148,10 +148,10 @@ export const ImageWrapper = styled.div`
 `;
 
 export const PokemonImage = styled.img`
-  width: 450px;
-  height: 450px;
-  max-width: 450px;
-  max-height: 450px;
+  width: 560px;
+  height: 560px;
+  max-width: 560px;
+  max-height: 560px;
   margin-top: 30px;
   z-index: 5;
   filter: drop-shadow(20px 20px 3px #232323);
