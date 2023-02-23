@@ -197,6 +197,20 @@ export const DetailsWrapper = styled.div`
   }
 `;
 
+export const Button = styled.div`
+  width: 100%;
+  left: 85vw;
+  bottom: 40px;
+  height: 20px;
+  font-size: 3rem;
+  z-index: 1;
+  cursor: pointer;
+  color: #f4f2f7;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: AnimeteArrow 1.5s ease-in-out infinite normal;
+`;
+
 export const DetailsLeft = styled.div`
   display: flex;
   flex-direction: column;

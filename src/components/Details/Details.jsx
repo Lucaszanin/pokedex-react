@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
+import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
 import Footer from "../Footer/Footer";
 import { ThemeContext } from "../../Contexts/theme-context";
 import { PokemonType } from "../Card/TypesPokemon/PokemonType";
@@ -35,6 +36,7 @@ import {
   IconTypePokemon,
   MovesWrapper,
   DetailBody,
+  Button,
 } from "./styles";
 import pokebolaBackground from "../Home/assets/pokebola-contorno.png";
 
@@ -83,6 +85,16 @@ function Details() {
             alt="Imagem do Pokemon"
           />
         </ImageWrapper>
+        <Button>
+          <FaArrowCircleDown
+            style={{
+              width: "40px",
+              height: "40px",
+              position: "absolute",
+              top: "-150px",
+            }}
+          />
+        </Button>
         <TitleDetail>About</TitleDetail>
         <DetailsWrapper>
           <DetailsLeft>

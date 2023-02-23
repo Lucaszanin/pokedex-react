@@ -73,6 +73,13 @@ body {
   }
 }
 
+@keyframes AnimeteArrow {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
 .animeLeft {
   opacity: 0;
   transform: translateX(-30px);
