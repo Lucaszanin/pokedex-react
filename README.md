@@ -43,6 +43,7 @@ Algumas coisas utilizadas no projeto:
 Responsividade;
 React,
 Styled Components;
+React Router Dom;
 Ciclos de Vida;
 Componentização;
 Hooks;
