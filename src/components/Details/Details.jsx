@@ -88,11 +88,11 @@ function Details() {
           <DetailsLeft>
             <Detail>
               <SpanDetail>Height ▶</SpanDetail>
-              <DetailText> {(data?.height / 10).toFixed()} m</DetailText>
+              <DetailText> {(data?.height / 10).toFixed()}m</DetailText>
             </Detail>
             <Detail>
               <SpanDetail>Weigth ▶</SpanDetail>
-              <DetailText>{data?.weight / 10} Kg</DetailText>
+              <DetailText>{(data?.weight / 8).toFixed()}Kg</DetailText>
             </Detail>
             <Detail>
               <SpanDetail>Types ▶</SpanDetail>

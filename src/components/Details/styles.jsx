@@ -224,6 +224,7 @@ export const DetailsRigth = styled.div`
   @media (max-width: 450px) {
     width: 100%;
     align-items: flex-start;
+    margin-top: 20px;
   }
 `;
 
@@ -237,8 +238,6 @@ export const SpanDetail = styled.span`
   color: #f7ba15;
   font-weight: 700;
   font-size: 20px;
-  display: flex;
-  flex: 1;
   font-family: "Poppins", sans-serif;
 `;
 

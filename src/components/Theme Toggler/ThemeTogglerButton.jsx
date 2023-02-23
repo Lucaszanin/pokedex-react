@@ -7,7 +7,7 @@ function ThemeTogglerButton() {
   const [toggle, setToggle] = useState(false);
   const handleToggleChange = () => {
     setToggle(!toggle);
-    setTheme(theme === themes.ligth ? themes.dark : themes.ligth);
+    setTheme(!theme);
   };
   return (
     <div>
